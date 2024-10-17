@@ -42,7 +42,7 @@ body {
                    
 .grid-container {
     display: grid;
-    grid-template-columns: 2fr 1.5fr;
+    grid-template-columns: 1fr 2.5fr;
     padding: 10px;
 }
 .grid-item {
