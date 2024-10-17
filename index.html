@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Adilson Andrade">
+	<meta name="description" content="Gerador de Preview de vídeos do Youtube">
+	<meta name="keywords" content="videos, stream, preview, mosaico, thumbs">
+	<meta name="copyright" content="© 2024 Adilson G Andrade">
+	<meta name="rating" content="general">
+  <title>Mosaic - Preview de Vídeos do Youtube</title>
+  <link rel="stylesheet" type="text/css" href="css\styles.css" media="screen" />
+  <link rel="shortcut icon" href="image\favicon.ico" />    
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="js\script.js"></script>
+</head>
+  <body onload="Listener();">  
+    <div class="grid-container">
+        <div class="grid-item">
+          <h1 class="banner-text">Mosaic<br>Preview de Vídeos do Youtube</h1>
+          <label for="video-links">Insira os links dos vídeos (um por linha):</label><br>
+          <textarea id="video-links" rows="20" cols="100"></textarea><br>
+          <button onclick="preview()">Preview</button>
+<!--
+          <button onclick="clearSelection()">Limpar Seleção</button>
+          <button onclick="generateFeedback()">Gerar Registro</button>            
+-->          
+        </div>        
+    </div>
+</body>
+</html>

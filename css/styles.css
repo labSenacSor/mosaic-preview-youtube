@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html {
+    font-size: 20px; /* Tamanho base da fonte */
+    font-family: 'Montserrat', sans-serif; /* Fonte padrão */
+}
+
+body {
+    background-color: #0d4c92; /* Azul escuro */
+    color: #fff; /* Texto branco para melhor contraste */
+    }
+    
+    h1, h2, h3, b {
+    color: #ef9d32; /* Laranja para títulos */
+    }
+
+    h1 {
+        font-size: 2rem; /* 32px (base de 16px multiplicada por 2) */
+    }
+    p {
+        font-size: 1rem; /* 16px (base de 16px) */
+        margin-left: auto;
+        margin-right: auto        
+    }
+    img {
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .banner-text {
+        /* Definir a fonte e o tamanho do texto */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem; /* 32px */
+        text-align: center;
+        color: #fff; /* Texto branco para melhor contraste */
+        background-color: #0d4c92; /* Fundo azul */
+        padding: 10px; /* Espaçamento interno para o texto */
+    }
+    
+                   
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    padding: 10px;
+}
+.grid-item {
+    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+}
+
+textarea {
+    width: 100%;    
+    height: auto;
+}
+
+.logo {
+    width: 200px; /* ou qualquer tamanho que você deseja */
+    height: auto; /* mantém a proporção da imagem */
+    margin-top: 20px; /* adiciona espaço acima da imagem */
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: auto;
+    }
+}
+
+/* Botão com fundo laranja e texto branco, sombra e bordas arredondadas */
+button[onclick="generateFeedback()"] {
+background-color: #ff9900;
+color: #fff;
+text-shadow: 1px 1px 2px #333;
+border: 2px solid #fff;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+/* Botão com fundo laranja e texto branco, sombra e bordas arredondadas */
+button[onclick="preview()"] {
+/*background-color: #ff9900;*/
+background-color: #007bff;  
+color: #fff;
+text-shadow: 1px 1px 2px #333;
+border: 2px solid #fff;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+/* Botão com fundo laranja e texto branco, sombra e bordas arredondadas */
+button[onclick="clearSelection()"] {
+background-color: #007bff;
+color: #fff;
+text-shadow: 1px 1px 2px #333;
+border: 2px solid #fff;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+}
