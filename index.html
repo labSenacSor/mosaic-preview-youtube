@@ -18,15 +18,18 @@
   <body onload="Listener();">  
     <div class="grid-container">
         <div class="grid-item">
+          <img class="logo" src="image/labsenac_rounded.png" alt="By LabSenac">          
           <h1 class="banner-text">Mosaic<br>Preview de Vídeos do Youtube</h1>
-          <label for="video-links">Insira os links dos vídeos (um por linha):</label><br>
-          <textarea id="video-links" rows="20" cols="100"></textarea><br>
-          <button onclick="preview()">Preview</button>
 <!--
           <button onclick="clearSelection()">Limpar Seleção</button>
           <button onclick="generateFeedback()">Gerar Registro</button>            
 -->          
-        </div>        
+        </div>
+        <div class="grid-item">
+          <label for="video-links">Insira os links dos vídeos (um por linha):</label><br>
+          <textarea id="video-links" rows="20" cols="100"></textarea><br>
+          <button onclick="preview()">Preview</button>
+      </div>        
     </div>
 </body>
 </html>
