@@ -43,21 +43,37 @@ function extractVideoId(videoLink) {
 
 function preview() {
   var videoLinks = document.getElementById("video-links").value.split("\n");
-  if (!videoLinks) {
-    alert("Insira pelo menos um link de vídeo do YouTube.");
-    return;
+  // Remove linhas em branco
+  videoLinks = videoLinks.filter(function(link) {
+      return link.trim() !== "";
+  });
+
+  if (videoLinks.length === 0) {
+      alert("Insira pelo menos um link de vídeo do YouTube.");
+      return;
   }
+
+  // Separar links de shorts e outros vídeos
+  var shortsLinks = [];
+  var otherLinks = [];
+  for (var i = 0; i < videoLinks.length; i++) {
+      if (videoLinks[i].includes("youtube.com/shorts/")) {
+          shortsLinks.push(videoLinks[i]);
+      } else {
+          otherLinks.push(videoLinks[i]);
+      }
+  }
+
+  // Combinar listas com shorts no final
+  videoLinks = otherLinks.concat(shortsLinks);
 
   var html = "";
   for (var i = 0; i < videoLinks.length; i++) {
-    var videoId = extractVideoId(videoLinks[i]);
-    if (videoId != "") {
-      // TAG HTML Funcional abaixo, mas os vídeos paravam ao chegarem ao final
-      // html += '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&loop=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&disablekb=1&autoplay=1" frameborder="0"></iframe>';
-      // Implementada mudança com a adição de &playlist=' + videoId ao final do URL do iframe. Isso garante que o vídeo reinicie automaticamente ao chegar ao fim.
-      html += '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&loop=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&disablekb=1&playlist=' + videoId + '" frameborder="0"></iframe>';
-    }
+      var videoId = extractVideoId(videoLinks[i]);
+      if (videoId != "") {
+          html += '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&loop=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0&disablekb=1&playlist=' + videoId + '" frameborder="0"></iframe>';
+      }
   }
   var newWindow = window.open();
   newWindow.document.write("<!DOCTYPE html><html><head><title>Mosaic</title><link rel=\"stylesheet\" type=\"text/css\" href=\"./css/mosaic.css\" /></head><body>" + html + "</body></html>");
-}   
+}
